@@ -6,5 +6,5 @@ To run this file enter the following in the command line:
 javac *.java
 ```
 ```bash
-java QualtricsLottery <path_of_csv_file>
+java QualtricsLottery <path_to_csv_file>
 ```
