@@ -24,6 +24,11 @@ public static void main(String[] args) {
 
         ArrayList<String> emails = readFile(args[1]);
 
+        if (numWinners > emails.size()) {
+                System.err.println("There are not enough participants for that many winners.");
+                System.exit(1);
+        }
+
         for (int i = 0; i < numWinners; i++) {
                 emails = pickWinner(emails);
         }
