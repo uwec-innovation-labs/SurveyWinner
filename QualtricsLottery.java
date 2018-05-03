@@ -8,6 +8,7 @@ import java.util.Random;
 public class QualtricsLottery {
 
 private static int numWinners;
+private static int counter = 0;
 
 public static void main(String[] args) {
         if (args.length != 2) {
@@ -28,10 +29,12 @@ public static void main(String[] args) {
                 System.err.println("There are not enough participants for that many winners.");
                 System.exit(1);
         }
-
-        for (int i = 0; i < numWinners; i++) {
+        while (!emails.isEmpty()) {
                 emails = pickWinner(emails);
         }
+        // for (int i = 0; i < emails.size(); i++) {
+        //         emails = pickWinner(emails);
+        // }
 }
 
 private static ArrayList<String> readFile(String fileName) {
@@ -66,9 +69,12 @@ private static ArrayList<String> readFile(String fileName) {
 private static ArrayList<String> pickWinner(ArrayList<String> emails) {
         Random rand = new Random();
 
-        int pick = rand.nextInt(emails.size()) + 1;
+        int pick = rand.nextInt(emails.size());
         System.out.println("The winner is " + emails.get(pick));
         emails.remove(pick);
+        System.out.println("Number of names left: " + emails.size());
+        counter++;
+        System.out.println("Counter: " + counter);
         return emails;
 
 }
