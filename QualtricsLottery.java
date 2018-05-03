@@ -52,12 +52,9 @@ public class QualtricsLottery {
 
     private static ArrayList<String> pickWinner(ArrayList<String> emails) {
         Random rand = new Random();
-
-        System.out.println("Picking from " + emails.size() + " emails.");
-        int pick = rand.nextInt(emails.size()) + 1;
-        System.out.println("The winner is " + emails.get(pick));
-        emails.remove(pick);
+        int pick = rand.nextInt(emails.size());
+        System.out.println("The winner is " + emails.remove(pick));
+        
         return emails;
-
     }
 }

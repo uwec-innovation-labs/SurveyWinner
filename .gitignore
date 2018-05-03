@@ -1,0 +1,8 @@
+# macOS cache
+.DS_Store
+
+# compliled Java files
+*.class
+
+# any file that may contain personal informations
+*.csv
