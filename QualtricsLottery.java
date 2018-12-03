@@ -29,12 +29,10 @@ public static void main(String[] args) {
                 System.err.println("There are not enough participants for that many winners.");
                 System.exit(1);
         }
-        while (!emails.isEmpty()) {
-                emails = pickWinner(emails);
+
+        for (int i = 0; i < numWinners; i++) {
+               emails = pickWinner(emails);
         }
-        // for (int i = 0; i < emails.size(); i++) {
-        //         emails = pickWinner(emails);
-        // }
 }
 
 private static ArrayList<String> readFile(String fileName) {
@@ -72,9 +70,7 @@ private static ArrayList<String> pickWinner(ArrayList<String> emails) {
         int pick = rand.nextInt(emails.size());
         System.out.println("The winner is " + emails.get(pick));
         emails.remove(pick);
-        System.out.println("Number of names left: " + emails.size());
         counter++;
-        System.out.println("Counter: " + counter);
         return emails;
 
 }
