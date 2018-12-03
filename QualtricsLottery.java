@@ -33,6 +33,7 @@ public static void main(String[] args) {
         for (int i = 0; i < numWinners; i++) {
                emails = pickWinner(emails);
         }
+
 }
 
 private static ArrayList<String> readFile(String fileName) {
@@ -40,7 +41,6 @@ private static ArrayList<String> readFile(String fileName) {
         String email = "";
         String cvsSplitBy = ",";
 
-        // arrayList to hold emails
         ArrayList<String> emails = new ArrayList<String>();
 
         try {
@@ -66,12 +66,8 @@ private static ArrayList<String> readFile(String fileName) {
 
 private static ArrayList<String> pickWinner(ArrayList<String> emails) {
         Random rand = new Random();
-
         int pick = rand.nextInt(emails.size());
-        System.out.println("The winner is " + emails.get(pick));
-        emails.remove(pick);
-        counter++;
+        System.out.println("The winner is " + emails.remove(pick));
         return emails;
-
 }
 }
