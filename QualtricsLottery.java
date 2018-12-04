@@ -61,8 +61,8 @@ public class QualtricsLottery {
                                         e.printStackTrace();
                                 }
                         }
-                        return emails;
                 }
+                return emails;
         }
 
         private static ArrayList<String> pickWinner(ArrayList<String> emails) {
