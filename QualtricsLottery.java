@@ -8,7 +8,6 @@ import java.util.Random;
 public class QualtricsLottery {
 
         private static int numWinners;
-        private static int counter = 0;
 
         public static void main(String[] args) {
                 if (args.length != 2) {
@@ -40,7 +39,6 @@ public class QualtricsLottery {
         private static ArrayList<String> readFile(String fileName) {
                 BufferedReader br = null;
                 String email = "";
-                String cvsSplitBy = ",";
 
                 ArrayList<String> emails = new ArrayList<String>();
 
